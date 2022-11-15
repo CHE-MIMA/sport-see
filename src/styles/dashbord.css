@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/font/Roboto-Light.ttf);
+  }
+body{
+    font-family: "roboto";
+}
+.copiryght{
+background-color: black;
+width: 120px;
+height: 1000px;
+display: flex;
+flex-direction: column;
+padding-top: 300px;
+}
+.icon{
+margin-top: 20px;
+width: 70px;
+height: 70px;
+padding-left: 25px;
+}
+.imgCopiryght{
+width: 25px;
+height: 160px;
+align-self:center;
+margin-top: 400px;
+}
