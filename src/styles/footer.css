@@ -1,0 +1,22 @@
+.footer{
+    background-color: black;
+    width: 110px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 200px;
+    margin-top: -930px;
+   
+    }
+    .icon{
+    margin-top: 20px;
+    width: 70px;
+    height: 70px;
+    align-self:center;
+    }
+    .imgCopiryght{
+    width: 25px;
+    height: 160px;
+    align-self:center;
+    margin-top: 230px;
+    }
