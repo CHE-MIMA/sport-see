@@ -4,8 +4,8 @@ import iconYoga from '../assets/iconYoga.png';
 import iconNatation from '../assets/iconNatation.png';
 import iconVelo from '../assets/iconVelo.png';
 import iconPoids from '../assets/iconPoids.png';
-import "../styles/footer.css";
-const Footer = () => {
+import "../styles/navertical.css";
+const Navertical = () => {
     return (
 
         <div className='footer'>
@@ -20,4 +20,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default Navertical;
