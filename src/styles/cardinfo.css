@@ -7,6 +7,7 @@
     }
 .divInfo{
     display: flex;
+    justify-content: space-between;
     height: 140px;
 width: 270px;
 margin-top: 50px;
@@ -19,7 +20,20 @@ padding:30px;
 
 }
 span{
-  padding-top: 80px;
-    font-size: 16px;
+margin-top: -10px;
+    font-size: 13px;
+    padding-right: 50px;
+    font-weight: 100;
   
+  
+}
+.flex-card{
+   
+display: flex;
+flex-direction: column;
+}
+.titre-info{
+    font-size: 18px;
+    margin-left: 0px;
+    padding-top: 35px;
 }

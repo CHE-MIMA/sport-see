@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import React from 'react';
-
+import { getUserMainData } from '../services/FetchApi'
 
 const Profil = () => {
+    const [data, setData] = useState();
+    useEffect(() => {
+        getUserMainData(12)
+        // fetch('http://localhost:3000/user/12')
+        //     .then((response) => response.json())
+        //     .then((data) => { setData(data.data) })
 
+
+
+
+    }, [])
     // useEffect(() => {
-    //     fetch('http://localhost:3000/user/18')
-    //         .then((response) => response.json()
-    //             .then(({ data }) => { setData(data) })
 
-    //         )
-
-
-    // }, [])
-    // useEffect(() => {
-
-    //     fetch(`http://localhost:8000/user/18`)
+    //     fetch(`http://localhost:8000/user/12`)
     //     .then((response) => response.json())
     //     .then(({ data }) => {
     //     setData(data)
@@ -23,24 +24,23 @@ const Profil = () => {
     //     })
     // }, [])
 
-    // const [ProfilData, setProfilData] = useState({})
-    const { data, setUserData } = useState({});
-    useEffect(() => {
 
-        async function fetchProfil() {
+    // useEffect(() => {
 
-            try {
-                const response = await fetch(`http://localhost:3000/user/18`)
-                const { data } = await response.json()
-                setUserData(data)
+    //     async function fetchProfil() {
 
-            } catch (err) {
-                console.log(err)
-            }
+    //         try {
+    //             const response = await fetch(`http://localhost:3000/user/18`)
+    //             const { data } = await response.json()
+    //             setUserData(data)
 
-        }
-        fetchProfil();
-    }, [])
+    //         } catch (err) {
+    //             console.log(err)
+    //         }
+
+    //     }
+    //     fetchProfil();
+    // }, [])
     // if (error) {
     //     return <span>Oups il y a eu un problème</span>
     // }
@@ -48,7 +48,7 @@ const Profil = () => {
     return (
         <div className='bonjour'>
             <h1>Bonjour
-                <span>{data}</span>
+                <span>{data?.userInfos.firstName}</span>
             </h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
