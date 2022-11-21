@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
     {
@@ -46,33 +46,41 @@ const data = [
     },
 ];
 
-export default class Example extends PureComponent {
-    static demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
 
-    render() {
-        return (
-            <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                    width={500}
-                    height={300}
-                    data={data}
-                    margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="pv" fill="#8884d8" />
-                    <Bar dataKey="uv" fill="#82ca9d" />
-                </BarChart>
-            </ResponsiveContainer>
-        );
-    }
-}
+
+export default function Chart() {
+
+    return (
+        <ResponsiveContainer width="50%" aspect={2}>
+            <BarChart
+                width={500}
+                height={300}
+                data={data}
+                margin={{
+                    top: 50,
+                    right: 30,
+                    left: 200,
+                    bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+
+                <Bar dataKey="pv" fill="black" />
+                <Bar dataKey="uv" fill="#E60000" />
+
+            </BarChart>
+
+        </ResponsiveContainer>
+    );
+
+};
+
+
+
+
 

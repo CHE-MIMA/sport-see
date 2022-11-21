@@ -5,6 +5,7 @@ import { getUserMainData } from '../services/FetchApi'
 const Profil = () => {
     const [data, setData] = useState();
     useEffect(() => {
+
         getUserMainData(12)
         // fetch('http://localhost:3000/user/12')
         //     .then((response) => response.json())

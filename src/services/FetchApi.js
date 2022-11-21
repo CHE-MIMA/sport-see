@@ -1,13 +1,14 @@
 import UserMainData from '../models/usermodel'
 import axios from 'axios';
+// import USER_MAIN_DATA from '../App'
 export const getUserMainData = async (id) => {
-    // // if (ENV === "dev") {
-    //     const data = USER_MAIN_DATA.find(
-    //         (element) => element.id.toString() === id
-    //     );
-    //     const user = new UserMainData(data);
-    //     return user;
-    // } else {
+
+    // const data = USER_MAIN_DATA.find(
+    //     (element) => element.id.toString() === id
+    // );
+    // const user = new UserMainData(data);
+    // console.log(user);
+
     try {
         const data = await axios
             .get(`http://localhost:3000/user/${id}`)
@@ -18,7 +19,7 @@ export const getUserMainData = async (id) => {
         console.error("ERREUR API : " + error);
         alert("Erreur API, veuillez réessayer ultérieurement.");
     }
-    // }
+
 };
 
 // useEffect(() => {

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import  Navertical  from '../components/Navertical ';
 import "../styles/dashbord.css";
-import PureComponent from '../components/Chart'
+import  Chart from '../components/Chart'
 
 import Cardinfo from '../components/Cardinfo';
 import Profil from '../components/Profil';
@@ -19,12 +19,10 @@ const Dashbord = () => {
    
     return (
         <div>
-    
             <Header />
-         
              <Profil />
-            <PureComponent/>
-            <Cardinfo/>
+            <Chart />
+            <Cardinfo />
             <Navertical />
         </div>
     );
