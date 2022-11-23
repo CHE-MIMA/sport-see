@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/erreur.css'
+import '../Erreur/erreur.css'
 // import Header from '../components/Header';
 // import Navertical from '../components/Navertical ';
 

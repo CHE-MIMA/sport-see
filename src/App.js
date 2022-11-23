@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import React from 'react';
 import Dashbord from "./pages/Dashbord";
-import Error from "./pages/Error";
+import Error from "./pages/Erreur/Error";
 
 const App = () => {
   return (

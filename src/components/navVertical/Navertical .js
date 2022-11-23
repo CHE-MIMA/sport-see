@@ -1,10 +1,10 @@
 import React from 'react';
-import copiryght from '../assets/Copiryght.png';
-import iconYoga from '../assets/iconYoga.png';
-import iconNatation from '../assets/iconNatation.png';
-import iconVelo from '../assets/iconVelo.png';
-import iconPoids from '../assets/iconPoids.png';
-import "../styles/navertical.css";
+import copiryght from '../../assets/Copiryght.png';
+import iconYoga from '../../assets/iconYoga.png';
+import iconNatation from '../../assets/iconNatation.png';
+import iconVelo from '../../assets/iconVelo.png';
+import iconPoids from '../../assets/iconPoids.png';
+import "../navVertical/navertical.css";
 const Navertical = () => {
     return (
 

@@ -34,8 +34,8 @@ export const getActivityMainData = async (userId) => {
         const data = await axios
             .get(`http://localhost:3000/user/${userId}/activity`)
             .then((response) => response.data.data);
-        const user = new ActivityModelData(data);
-        return user;
+        const activity = new ActivityModelData(data);
+        return activity;
     } catch (error) {
         console.error("ERREUR API : " + error);
         alert("Erreur API, veuillez réessayer ultérieurement.");

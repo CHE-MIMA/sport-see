@@ -6,17 +6,17 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 
 export default function ChartBar() {
-    // const [data, setData] = useState();
-    // useEffect(() => {
+    //     const [data, setData] = useState();
+    //     useEffect(() => {
 
-    //     getActivityMainData(18)
-    //     fetch('http://localhost:3000/user/18/activity')
-    //         .then((response) => response.json())
-    //         .then((data) => { setData(data.data) })
+    //         getActivityMainData(18)
+    //         fetch('http://localhost:3000/user/18/activity')
+    //             .then((response) => response.json())
+    //             .then((data) => { setData(data.data) })
 
 
 
-    // }, [])
+    //     }, [])
 
 
     const activity = [

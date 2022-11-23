@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../assets/logoSport.png";
-import "../styles/navigation.css"
+import logo from "../../assets/logoSport.png";
+import "../header/navigation.css"
 
 
 const Header = () => {

@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
-import  Navertical  from '../components/Navertical ';
-import "../styles/dashbord.css";
-import  ChartBar from '../components/charts/Chartbar';
-import  ChartLine from '../components/charts/ChartLine';
-import  ChartRadar from '../components/charts/ChartRadar';
+import Header from '../components/header/Header';
+import  Navertical  from '../components/navVertical/Navertical ';
+import "../styles/main.css";
+import  ChartBar from '../components/chartBar/Chartbar';
+import  ChartLine from '../components/chartLine/ChartLine';
+import  ChartRadar from '../components/chartRadar/ChartRadar';
 // import  ScoreChart from '../components/charts/RadialBarChart';
-import Cardinfo from '../components/Cardinfo';
-import Profil from '../components/Profil';
+import Cardinfo from '../components/cardinfo/Cardinfo';
+import Profil from '../components/profil/Profil';
 
 
 const Dashbord = () => {

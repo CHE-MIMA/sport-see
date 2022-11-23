@@ -1,11 +1,11 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import iconCalorie from '../assets/calories-icon.png';
-import iconCarbs from '../assets/carbs-icon.png';
-import iconFat from '../assets/fat-icon.png';
-import iconProtein from '../assets/protein-icon.png';
-import { getUserMainData } from '../services/FetchApi';
-import '../styles/cardinfo.css'
+import iconCalorie from '../../assets/calories-icon.png';
+import iconCarbs from '../../assets/carbs-icon.png';
+import iconFat from '../../assets/fat-icon.png';
+import iconProtein from '../../assets/protein-icon.png';
+import { getUserMainData } from '../../services/FetchApi';
+import '../cardinfo/cardinfo.css'
 
 const Cardinfo = () => {
     const [data, setData] = useState();

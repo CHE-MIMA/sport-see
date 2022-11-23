@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from 'react';
-import { getUserMainData } from '../services/FetchApi'
+import { getUserMainData } from '../../services/FetchApi'
 
 const Profil = () => {
     const [data, setData] = useState();
