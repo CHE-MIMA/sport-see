@@ -65,31 +65,32 @@ export default function ChartBar() {
     ];
 
     return (
-        <ResponsiveContainer width="50%" aspect={2}>
-            <BarChart
-                width={500}
-                height={300}
-                data={activity}
-                margin={{
-                    top: 50,
-                    right: 30,
-                    left: 200,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="1 3" />
+        <div id="chartBarDiv">
+            <ResponsiveContainer width="70%" aspect={3}>
+                <BarChart
 
-                <XAxis axisLine={false} dataKey="name" />
-                <YAxis axisLine={false} orientation='right' />
-                <Tooltip />
-                <Legend />
+                    data={activity}
+                    margin={{
+                        top: 50,
+                        right: 30,
+                        left: 250,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="1 3" />
 
-                <Bar dataKey="kilogram" radius={[10, 10, 0, 0]} barSize={8} fill="#282D30" />
-                <Bar dataKey="calorie" radius={[10, 10, 0, 0]} barSize={8} fill="#E60000" />
+                    <XAxis axisLine={false} dataKey="name" />
+                    <YAxis axisLine={false} orientation='right' />
+                    <Tooltip />
+                    <Legend />
 
-            </BarChart>
+                    <Bar dataKey="kilogram" radius={[10, 10, 0, 0]} barSize={8} fill="#282D30" />
+                    <Bar dataKey="calorie" radius={[10, 10, 0, 0]} barSize={8} fill="#E60000" />
 
-        </ResponsiveContainer>
+                </BarChart>
+
+            </ResponsiveContainer>
+        </div>
     );
 
 };

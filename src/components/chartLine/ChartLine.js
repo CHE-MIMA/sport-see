@@ -1,6 +1,6 @@
 import React from 'react';
 import { LineChart, Line, XAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
-
+import '../chartLine/chartline.css';
 const data = [
     {
         name: 'L',
@@ -43,27 +43,26 @@ export default function ChartLine() {
 
 
     return (
-        <ResponsiveContainer width="30%" aspect={2}>
-            <LineChart
-
-                width={500}
-                height={300}
-                data={data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 200,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" axisLine={false} dy={20} fill='#FFF' />
+        <div id='linechartDiv'>
+            <ResponsiveContainer width="100%" height='100%'>
+                <LineChart
+                    data={data}
+                    margin={{
+                        top: 5,
+                        right: 10,
+                        left: 10,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="0 0" />
+                    <XAxis dataKey="name" axisLine={false} dy={10} stroke="#fff" />
 
 
-                <Line type="monotone" dataKey="pv" stroke="red" strokeWidth={2} dot={false} />
+                    <Line type="monotone" dataKey="pv" stroke="#fff" strokeWidth={2} dot={false} />
 
-            </LineChart>
-        </ResponsiveContainer>
+                </LineChart>
+            </ResponsiveContainer>
+        </div>
     );
 
 }

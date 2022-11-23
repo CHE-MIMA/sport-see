@@ -1,6 +1,6 @@
 // import "../styles/radarchart.css";
 import React from 'react';
-
+import "../chartRadar/radarchart.css"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -44,8 +44,8 @@ const data = [
 
 export default function ChartRadar() {
     return (
-        <div className='Radarchart'>
-            <ResponsiveContainer Left="200px" width="30%" aspect={2}>
+        <div id='radarchartDiv'>
+            <ResponsiveContainer width="100%" height="100%">
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
                     <PolarGrid />
                     <PolarAngleAxis dataKey="subject" />
