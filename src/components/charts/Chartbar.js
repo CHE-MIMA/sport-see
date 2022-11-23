@@ -63,15 +63,15 @@ export default function Chart() {
                     bottom: 5,
                 }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid strokeDasharray="1 3" />
 
-                <XAxis dataKey="name" />
-                <YAxis />
+                <XAxis axisLine={false} />
+                <YAxis axisLine={false} orientation='right' />
                 <Tooltip />
                 <Legend />
 
-                <Bar dataKey="pv" fill="black" />
-                <Bar dataKey="uv" fill="#E60000" />
+                <Bar dataKey="pv" radius={[10, 10, 0, 0]} barSize={8} fill="#282D30" />
+                <Bar dataKey="uv" radius={[10, 10, 0, 0]} barSize={8} fill="#E60000" />
 
             </BarChart>
 

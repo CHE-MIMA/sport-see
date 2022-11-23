@@ -1,8 +1,9 @@
 .info-card{
     height: 800px;
-    margin-left: 1200px;
     display: flex;
     flex-direction: column;
+    margin-left: 1200px;
+    margin-top: -900px;
     
     }
 .divInfo{
@@ -27,8 +28,7 @@ margin-top: -10px;
   
   
 }
-.flex-card{
-   
+.flex-card{  
 display: flex;
 flex-direction: column;
 }

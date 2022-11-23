@@ -1,4 +1,4 @@
-import UserMainData from '../models/usermodel'
+import UserModelData from '../models/usermodel'
 import axios from 'axios';
 // import USER_MAIN_DATA from '../App'
 export const getUserMainData = async (id) => {
@@ -13,7 +13,7 @@ export const getUserMainData = async (id) => {
         const data = await axios
             .get(`http://localhost:3000/user/${id}`)
             .then((response) => response.data.data);
-        const user = new UserMainData(data);
+        const user = new UserModelData(data);
         return user;
     } catch (error) {
         console.error("ERREUR API : " + error);

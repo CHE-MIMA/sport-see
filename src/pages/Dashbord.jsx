@@ -2,7 +2,11 @@ import React from 'react';
 import Header from '../components/Header';
 import  Navertical  from '../components/Navertical ';
 import "../styles/dashbord.css";
-import  Chart from '../components/Chart'
+import  ChartBar from '../components/charts/Chartbar';
+import  ChartLine from '../components/charts/ChartLine';
+import  ChartRadar from '../components/charts/RadarChart';
+// import  ScoreChart from '../components/charts/RadialBarChart';
+
 
 import Cardinfo from '../components/Cardinfo';
 import Profil from '../components/Profil';
@@ -21,8 +25,17 @@ const Dashbord = () => {
         <div>
             <Header />
              <Profil />
-            <Chart />
-            <Cardinfo />
+            <div className='container-div'>
+                <div className='charts'>
+                   <ChartBar />
+                    <div className='flex-charts'>
+                     <ChartLine />
+                    < ChartRadar />
+                   {/* < ScoreChart />  */}
+                    </div>
+                </div>
+                <Cardinfo />
+            </div>
             <Navertical />
         </div>
     );
