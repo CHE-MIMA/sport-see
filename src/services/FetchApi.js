@@ -1,4 +1,5 @@
-import UserModelData from '../models/usermodel'
+import UserModelData from '../models/usermodel';
+import ActivityModelData from '../models/ActivityModel';
 import axios from 'axios';
 // import USER_MAIN_DATA from '../App'
 export const getUserMainData = async (id) => {
@@ -21,13 +22,23 @@ export const getUserMainData = async (id) => {
     }
 
 };
+export const getActivityMainData = async (userId) => {
 
-// useEffect(() => {
-//     fetch('http://localhost:3000/user/12')
-//         .then((response) => response.json())
-//         .then((data) => { setData(data.data) })
+    // const data = USER_MAIN_DATA.find(
+    //     (element) => element.id.toString() === id
+    // );
+    // const user = new UserMainData(data);
+    // console.log(user);
 
+    try {
+        const data = await axios
+            .get(`http://localhost:3000/user/${userId}/activity`)
+            .then((response) => response.data.data);
+        const user = new ActivityModelData(data);
+        return user;
+    } catch (error) {
+        console.error("ERREUR API : " + error);
+        alert("Erreur API, veuillez réessayer ultérieurement.");
+    }
 
-
-
-// }, [])
+};

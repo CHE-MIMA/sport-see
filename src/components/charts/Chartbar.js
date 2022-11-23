@@ -1,61 +1,75 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-const data = [
-    {
-        name: 'Page A',
-        uv: 4000,
-        pv: 2400,
-        amt: 2400,
-    },
-    {
-        name: 'Page B',
-        uv: 3000,
-        pv: 1398,
-        amt: 2210,
-    },
-    {
-        name: 'Page C',
-        uv: 2000,
-        pv: 9800,
-        amt: 2290,
-    },
-    {
-        name: 'Page D',
-        uv: 2780,
-        pv: 3908,
-        amt: 2000,
-    },
-    {
-        name: 'Page E',
-        uv: 1890,
-        pv: 4800,
-        amt: 2181,
-    },
-    {
-        name: 'Page F',
-        uv: 2390,
-        pv: 3800,
-        amt: 2500,
-    },
-    {
-        name: 'Page G',
-        uv: 3490,
-        pv: 4300,
-        amt: 2100,
-    },
-];
+// import { getActivityMainData } from '../../services/FetchApi';
+// import { useEffect, useState } from 'react';
 
 
 
-export default function Chart() {
+export default function ChartBar() {
+    // const [data, setData] = useState();
+    // useEffect(() => {
+
+    //     getActivityMainData(18)
+    //     fetch('http://localhost:3000/user/18/activity')
+    //         .then((response) => response.json())
+    //         .then((data) => { setData(data.data) })
+
+
+
+    // }, [])
+
+
+    const activity = [
+        {
+            name: 1,
+            kilogram: 70,
+            calorie: 240,
+            amt: 70,
+        },
+        {
+            name: 2,
+            kilogram: 69,
+            calorie: 220,
+            amt: 70,
+        },
+        {
+            name: 3,
+            kilogram: 70,
+            calorie: 280,
+            amt: 70,
+        },
+        {
+            name: 4,
+            kilogram: 70,
+            calorie: 500,
+            amt: 70,
+        },
+        {
+            name: 5,
+            kilogram: 69,
+            calorie: 160,
+            amt: 69,
+        },
+        {
+            name: 6,
+            kilogram: 69,
+            calorie: 162,
+            amt: 69,
+        },
+        {
+            name: 7,
+            kilogram: 69,
+            calorie: 390,
+            amt: 69,
+        },
+    ];
 
     return (
         <ResponsiveContainer width="50%" aspect={2}>
             <BarChart
                 width={500}
                 height={300}
-                data={data}
+                data={activity}
                 margin={{
                     top: 50,
                     right: 30,
@@ -65,13 +79,13 @@ export default function Chart() {
             >
                 <CartesianGrid strokeDasharray="1 3" />
 
-                <XAxis axisLine={false} />
+                <XAxis axisLine={false} dataKey="name" />
                 <YAxis axisLine={false} orientation='right' />
                 <Tooltip />
                 <Legend />
 
-                <Bar dataKey="pv" radius={[10, 10, 0, 0]} barSize={8} fill="#282D30" />
-                <Bar dataKey="uv" radius={[10, 10, 0, 0]} barSize={8} fill="#E60000" />
+                <Bar dataKey="kilogram" radius={[10, 10, 0, 0]} barSize={8} fill="#282D30" />
+                <Bar dataKey="calorie" radius={[10, 10, 0, 0]} barSize={8} fill="#E60000" />
 
             </BarChart>
 

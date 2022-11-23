@@ -1,5 +1,6 @@
+
 export default class UserModelData {
-    
+
     constructor(data) {
         this.id = data.id;
         this.firstName = data.userInfos.firstName;

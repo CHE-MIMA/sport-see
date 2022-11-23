@@ -6,10 +6,10 @@ const Profil = () => {
     const [data, setData] = useState();
     useEffect(() => {
 
-        getUserMainData(12)
-        // fetch('http://localhost:3000/user/12')
-        //     .then((response) => response.json())
-        //     .then((data) => { setData(data.data) })
+        getUserMainData(18)
+        fetch('http://localhost:3000/user/18')
+            .then((response) => response.json())
+            .then((data) => { setData(data.data) })
 
 
 
@@ -48,9 +48,7 @@ const Profil = () => {
 
     return (
         <div className='bonjour'>
-            <h1>Bonjour
-                <span>{data?.userInfos.firstName}</span>
-            </h1>
+            <h1>Bonjour {data?.userInfos.firstName} </h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
     );
