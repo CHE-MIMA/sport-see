@@ -1,11 +1,11 @@
 #radarchartDiv{
 background-color: rgba(40, 45, 48, 1);
-width: 21%;
-height: 210px;
+width: 30%;
+height: 200px;
 border-radius: 5px;
 
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
     
   
     #radarchartDiv{

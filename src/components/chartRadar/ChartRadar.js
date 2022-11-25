@@ -49,13 +49,13 @@ export default function ChartRadar() {
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}
                     margin={{
                         top: 0,
-                        right: 45,
-                        left: 20,
+                        right: 70,
+                        left: 0,
                         bottom: 0,
                     }}>
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis dataKey="subject" tickLine={false}
-                        tick={{ fontSize: 13, fontWeight: 500 }} stroke="#fff" />
+                        tick={{ fontSize: 10, fontWeight: 400 }} stroke="#fff" />
                     <Radar dataKey="A" fill="#E60000" stroke="#E60000" fillOpacity={0.7} />
                 </RadarChart>
             </ResponsiveContainer>

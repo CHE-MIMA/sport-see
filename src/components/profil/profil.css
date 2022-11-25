@@ -14,8 +14,8 @@ font-size: 30px;
 }  
 @media (min-width: 1440px) {
     .profil-title{
-        margin-top: -900px;
-        margin-left: 13%;
+        margin-top: -920px;
+        margin-left: 12%;
         font-size: 40px;
         }
         .profil-span{
@@ -24,8 +24,9 @@ font-size: 30px;
             
         }
         .profil-p{
-            margin-left: 13%;
+            margin-left: 12%;
             font-size: 20px; 
         }
    
 }
+

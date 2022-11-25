@@ -19,16 +19,17 @@ const Dashbord = () => {
              <Profil />
            
             <div className='container-div'>
-                <div className='charts'>
-                   <ChartBar />
-                    <div className='flex-charts'>
-                     <ChartLine />
-                    < ChartRadar />
-                    < Scorechart/> 
+                <div className="chart-card-flex">
+                   <div className='charts'>
+                         <ChartBar />
+                        <div className='flex-charts'>
+                         <ChartLine />
+                         < ChartRadar />
+                         < Scorechart/> 
+                        </div>
                     </div>
-                  
+                   <Cardinfo />
                 </div>
-                <Cardinfo />
             </div>
           
         </div>

@@ -16,16 +16,18 @@ p{
     margin-left: 200px;
     font-size: 20px;
 }
+.charts{
+width: 90%;
+height: 100%;
+margin-left:12%;
+}
 .flex-charts{
- margin-left:10%;
+
 display: flex;
 margin-top: 30PX;
 }
-
-@media (min-width: 1440px) {
-    .flex-charts{
-        margin-left:13%;
-    
-       }
-   
+.chart-card-flex{
+    display: flex;
 }
+
+

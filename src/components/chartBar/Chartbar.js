@@ -78,7 +78,7 @@ export default function ChartBar() {
                     </div>
                 </div>
             </div>
-            <ResponsiveContainer width="100%" aspect={5}>
+            <ResponsiveContainer width="100%" aspect={4}>
                 <BarChart
 
                     data={activity}

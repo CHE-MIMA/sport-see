@@ -4,14 +4,14 @@
 
     display: flex;
     flex-direction: column;
-    margin-left: 75%;
-    margin-top: -550px;
+    margin-right: 5%;
+ 
     
     }
 .divInfo{
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 40px;
 background-color: rgba(251, 251, 251, 1);
 height: 100px;
 width: 220px;
@@ -44,8 +44,8 @@ margin-top: 00px;
     
         display: flex;
         flex-direction: column;
-        margin-left: 75%;
-        margin-top: -700px;
+        margin-right: 10%;
+      
         
         }
     .divInfo{
