@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import React from 'react';
-import { getUserMainData } from '../../services/FetchApi'
+import { getUserMainData } from '../../services/FetchApi';
+import "../profil/profil.css";
 
 const Profil = () => {
     const [data, setData] = useState();
@@ -48,8 +49,10 @@ const Profil = () => {
 
     return (
         <div className='bonjour'>
-            <h1>Bonjour {data?.userInfos.firstName} </h1>
-            <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            <h2 className="profil-title">Bonjour
+                <span className="profil-span"> {data?.userInfos.firstName} </span>
+            </h2>
+            <p className="profil-p" >Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
     );
 };

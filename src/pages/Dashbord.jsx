@@ -9,6 +9,7 @@ import  ChartRadar from '../components/chartRadar/ChartRadar';
 import Cardinfo from '../components/cardinfo/Cardinfo';
 import Profil from '../components/profil/Profil';
 
+import Scorechart from '../components/chartradialBar/ScoreChart';
 
 const Dashbord = () => {
     return (
@@ -21,8 +22,9 @@ const Dashbord = () => {
                     <div className='flex-charts'>
                      <ChartLine />
                     < ChartRadar />
-                   {/* < ScoreChart />  */}
+                    < Scorechart/> 
                     </div>
+                  
                 </div>
                 <Cardinfo />
             </div>

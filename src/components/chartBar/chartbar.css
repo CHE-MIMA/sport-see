@@ -1,0 +1,51 @@
+#chartBarDiv{
+    background-color: rgba(251, 251, 251, 1);
+    width: 60%;
+    height: 300px;
+    margin-left: 200px;
+    margin-top: 60px;
+    border-radius: 5px;
+}
+.info-graphic{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    justify-content: space-between;
+  }
+    .title-graphic{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        margin-left: 20px;
+       
+    }
+    .legends{
+        font-size: 16px;
+        display: flex;
+        flex-direction: row;
+       margin-bottom: 40px;
+        margin-top: 20px;
+        
+    }
+        .circle{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 30px;
+        }
+            .point{
+                height: 8px;
+                width: 8px;
+                border-radius: 50%; 
+                background-color: #020203;
+            }
+            .red{
+                background-color: #ff0101;
+            }
+            .black{
+                background-color: #020203;
+            }

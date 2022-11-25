@@ -5,9 +5,10 @@
   ul{
     display: flex;
     justify-content: space-between;
+
   }
   li{
-    margin-left: 200px;
+    padding-left: 90px;
     list-style-type: none;
    color: white;
    font-size: 25px;
@@ -31,3 +32,10 @@ background-color: black;
 display: flex;
   }
 
+  @media (min-width: 1440px) {
+    li{
+      padding-left: 200px;
+    
+    }
+   
+}

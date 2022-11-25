@@ -1,41 +1,41 @@
 import React from 'react';
-import { LineChart, Line, XAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import '../chartLine/chartline.css';
 const data = [
     {
         name: 'L',
-        pv: 2400,
-        amt: 2400,
+        session: 30,
+
     },
     {
         name: 'M',
-        pv: 1398,
-        amt: 2210,
+        session: 40,
+
     },
     {
         name: 'M',
-        pv: 9800,
-        amt: 2290,
+        session: 50,
+
     },
     {
         name: 'J',
-        pv: 3908,
-        amt: 2000,
+        session: 30,
+
     },
     {
         name: 'V',
-        pv: 4800,
-        amt: 2181,
+        session: 30,
+
     },
     {
         name: 'S',
-        pv: 3800,
-        amt: 2500,
+        session: 50,
+
     },
     {
         name: 'D',
-        pv: 4300,
-        amt: 2100,
+        session: 50,
+
     },
 ];
 
@@ -44,21 +44,29 @@ export default function ChartLine() {
 
     return (
         <div id='linechartDiv'>
-            <ResponsiveContainer width="100%" height='100%'>
+            <div className="titleLineChart">
+                Durée moyenne des
+                <br />
+                sessions
+            </div>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
+                    height={250}
                     data={data}
                     margin={{
-                        top: 5,
-                        right: 10,
-                        left: 10,
-                        bottom: 5,
+                        top: 100,
+                        right: 0,
+                        left: 5,
+                        bottom: 0,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="0 0" />
-                    <XAxis dataKey="name" axisLine={false} dy={10} stroke="#fff" />
 
+                    <XAxis dataKey="name"
+                        stroke="none"
+                        tick={{ fill: "rgba(255, 255, 255, 0.5)" }} />
 
-                    <Line type="monotone" dataKey="pv" stroke="#fff" strokeWidth={2} dot={false} />
+                    <YAxis dataKey="session" hide={true} />
+                    <Line type="monotone" dataKey="session" stroke="#fff" strokeWidth={2} dot={0} />
 
                 </LineChart>
             </ResponsiveContainer>

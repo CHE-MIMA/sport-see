@@ -1,0 +1,41 @@
+.radialBarchart{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    margin-left: 30px;
+
+  
+}
+
+
+#radialbarchart-title{
+    font-size: 12px;
+    color: #20253A;
+    position: absolute;
+    top:10%;
+    left:10%;
+}
+
+#radialbarchart-score{
+    text-align: center;
+    width: 60px;
+    white-space:normal;
+    font-size: 14px;
+    color: #74798C;
+    background-color: #FFFFFF;
+    padding: 20%;
+    border-radius: 50%;
+    position: absolute;
+    top:19%;
+    left:20%;
+}
+
+#score-bold{
+    font-weight: 700;
+    font-size: 20px;
+    color: #282D30;
+    padding-left:5px;
+}
