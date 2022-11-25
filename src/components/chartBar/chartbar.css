@@ -1,10 +1,12 @@
 #chartBarDiv{
     background-color: rgba(251, 251, 251, 1);
-    width: 60%;
-    height: 300px;
-    margin-left: 200px;
-    margin-top: 60px;
+    width: 62%;
+    height: 100%;
+    margin-left: 10%;
+    margin-top: 80px;
+    margin-bottom: 80px;
     border-radius: 5px;
+    padding-left: 20px;
 }
 .info-graphic{
     display: flex;
@@ -13,17 +15,17 @@
     justify-content: space-between;
   }
     .title-graphic{
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 24px;
         letter-spacing: 0px;
         margin-bottom: 40px;
         margin-top: 20px;
-        margin-left: 20px;
+        margin-left: 25px;
        
     }
     .legends{
-        font-size: 16px;
+        font-size: 12px;
         display: flex;
         flex-direction: row;
        margin-bottom: 40px;
@@ -48,4 +50,12 @@
             }
             .black{
                 background-color: #020203;
+            }
+            @media (min-width: 1440px) {
+                #chartBarDiv{
+                    width: 60%;
+                    margin-left: 13%;
+                  
+                }
+               
             }

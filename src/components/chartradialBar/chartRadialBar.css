@@ -1,11 +1,11 @@
 .radialBarchart{
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 21%;
+    height: 210PX;
     background-color: #f8f8f8;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
     border-radius: 5px;
-    margin-left: 30px;
+    margin-left: 1%;
 
   
 }
@@ -38,4 +38,14 @@
     font-size: 20px;
     color: #282D30;
     padding-left:5px;
+}
+@media (min-width: 1200px) {
+    
+  
+    .radialBarchart{
+       
+        height: 270PX;
+        margin-left: 2%;
+      
+}
 }

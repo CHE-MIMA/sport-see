@@ -4,8 +4,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 200px;
-    margin-top: -920px;
+    padding-top: 150px;
+    margin-top: -790px;
    
     }
     .icon{
@@ -15,10 +15,23 @@
     align-self:center;
     }
     .imgCopiryght{
-    width: 23px;
-    height: 160px;
+    width: 15px;
+    height: 130px;
     align-self:center;
-    margin-top: 230px;
+    margin-top: 180px;
     padding-bottom: 50PX;
     }
-  
+    @media (min-width: 1424px) {
+        .footer{
+            padding-top: 180px;
+            margin-top: -935PX;
+           
+            }   
+            .imgCopiryght{
+                width: 20px;
+                height: 160px;
+                align-self:center;
+                margin-top: 180px;
+                padding-bottom: 40PX;
+                }
+    }

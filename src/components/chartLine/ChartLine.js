@@ -51,7 +51,7 @@ export default function ChartLine() {
             </div>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
-                    height={250}
+
                     data={data}
                     margin={{
                         top: 100,

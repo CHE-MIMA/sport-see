@@ -85,7 +85,7 @@ export default function ChartBar() {
                     margin={{
                         top: 5,
                         right: 5,
-                        left: 30,
+                        left: 0,
                         bottom: 5,
                     }}
                 >
