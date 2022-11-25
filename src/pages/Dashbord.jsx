@@ -15,7 +15,9 @@ const Dashbord = () => {
     return (
         <div>
             <Header />
+            <Navertical />
              <Profil />
+           
             <div className='container-div'>
                 <div className='charts'>
                    <ChartBar />
@@ -28,7 +30,7 @@ const Dashbord = () => {
                 </div>
                 <Cardinfo />
             </div>
-            <Navertical />
+          
         </div>
     );
 };
