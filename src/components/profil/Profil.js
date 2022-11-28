@@ -2,55 +2,30 @@ import { useEffect, useState } from "react";
 import React from 'react';
 import { getUserMainData } from '../../services/FetchApi';
 import "../profil/profil.css";
+// import USER_MAIN_DATA from '../../data/data';
 
-const Profil = () => {
+const Profil = ({ id }) => {
+    // const data = USER_MAIN_DATA;
+    // for (let index = 0; index < data.length; index++) {
+    //     const element = data[index];
+    //     console.log(element);
+    // }
+    console.log(id);
     const [data, setData] = useState();
     useEffect(() => {
+        async function getUserData() {
 
-        getUserMainData(18)
-        fetch('http://localhost:3000/user/18')
-            .then((response) => response.json())
-            .then((data) => { setData(data.data) })
+            setData(await getUserMainData(id))
+            // console.log(getUserMainData(18));
+        }
+        getUserData();
+    }, [id])
 
-
-
-
-    }, [])
-    // useEffect(() => {
-
-    //     fetch(`http://localhost:8000/user/12`)
-    //     .then((response) => response.json())
-    //     .then(({ data }) => {
-    //     setData(data)
-
-    //     })
-    // }, [])
-
-
-    // useEffect(() => {
-
-    //     async function fetchProfil() {
-
-    //         try {
-    //             const response = await fetch(`http://localhost:3000/user/18`)
-    //             const { data } = await response.json()
-    //             setUserData(data)
-
-    //         } catch (err) {
-    //             console.log(err)
-    //         }
-
-    //     }
-    //     fetchProfil();
-    // }, [])
-    // if (error) {
-    //     return <span>Oups il y a eu un problème</span>
-    // }
 
     return (
         <div className='bonjour'>
             <h2 className="profil-title">Bonjour
-                <span className="profil-span"> {data?.userInfos.firstName} </span>
+                <span className="profil-span"> {data?.firstName} </span>
             </h2>
             <p className="profil-p" >Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>

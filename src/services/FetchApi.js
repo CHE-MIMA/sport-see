@@ -1,13 +1,15 @@
 import UserModelData from '../models/usermodel';
 import ActivityModelData from '../models/ActivityModel';
 import axios from 'axios';
-// import USER_MAIN_DATA from '../App'
-export const getUserMainData = async (id) => {
+// import USER_MAIN_DATA from '../data/data';
+// import USER_ACTIVITY from '../data/data';
 
+export const getUserMainData = async (id) => {
+    // if()
     // const data = USER_MAIN_DATA.find(
     //     (element) => element.id.toString() === id
     // );
-    // const user = new UserMainData(data);
+    // const user = new UserModelData(data);
     // console.log(user);
 
     try {
@@ -22,17 +24,17 @@ export const getUserMainData = async (id) => {
     }
 
 };
-export const getActivityMainData = async (userId) => {
+export const getActivityMainData = async (id) => {
 
-    // const data = USER_MAIN_DATA.find(
-    //     (element) => element.id.toString() === id
+    // const data = USER_ACTIVITY.find(
+    //     (element) => element.userId.toString() === userId
     // );
-    // const user = new UserMainData(data);
-    // console.log(user);
+    // const activity = new ActivityModelData(data);
+    // console.log(activity);
 
     try {
         const data = await axios
-            .get(`http://localhost:3000/user/${userId}/activity`)
+            .get(`http://localhost:3000/user/${id}/activity`)
             .then((response) => response.data.data);
         const activity = new ActivityModelData(data);
         return activity;

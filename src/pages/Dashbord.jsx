@@ -8,15 +8,17 @@ import  ChartRadar from '../components/chartRadar/ChartRadar';
 // import  ScoreChart from '../components/charts/RadialBarChart';
 import Cardinfo from '../components/cardinfo/Cardinfo';
 import Profil from '../components/profil/Profil';
-
+import { useParams } from 'react-router-dom';
 import Scorechart from '../components/chartradialBar/ScoreChart';
 
 const Dashbord = () => {
+    const URL =useParams()
+    console.log(URL.id)
     return (
         <div>
             <Header />
             <Navertical />
-             <Profil />
+             <Profil id={URL.id}/>
            
             <div className='container-div'>
                 <div className="chart-card-flex">
@@ -28,7 +30,7 @@ const Dashbord = () => {
                          < Scorechart/> 
                         </div>
                     </div>
-                   <Cardinfo />
+                   <Cardinfo id={URL.id}/>
                 </div>
             </div>
           

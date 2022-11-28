@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import { getUserMainData } from '../../services/FetchApi';
 import "../chartradialBar/chartRadialBar.css";
+
 
 const data = [
     {
@@ -12,6 +14,14 @@ const data = [
 ];
 
 export default function Scorechart() {
+    // const [data, setData] = useState();
+    // useEffect(() => {
+
+    //     getUserMainData(18)
+    //     fetch('http://localhost:3000/user/18')
+    //         .then((response) => response.json())
+    //         .then((data) => { setData(data.data) })
+    // }, [])
     return (
         <div className="radialBarchart">
             <h3 id="radialbarchart-title">Score</h3>

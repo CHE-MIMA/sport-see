@@ -7,19 +7,18 @@ import iconProtein from '../../assets/protein-icon.png';
 import { getUserMainData } from '../../services/FetchApi';
 import '../cardinfo/cardinfo.css'
 
-const Cardinfo = () => {
+const Cardinfo = ({ id }) => {
+    console.log(id);
     const [data, setData] = useState();
     useEffect(() => {
+        async function getUserData() {
 
-        getUserMainData(18)
-        fetch('http://localhost:3000/user/18')
-            .then((response) => response.json())
-            .then((data) => { setData(data.data) })
+            setData(await getUserMainData(id))
+            // console.log(getUserMainData(18));
+        }
+        getUserData();
+    }, [id])
 
-
-
-
-    }, [])
     return (
         <div className="info-card">
             <div className="divInfo">

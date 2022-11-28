@@ -1,22 +1,23 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-// import { getActivityMainData } from '../../services/FetchApi';
+
 // import { useEffect, useState } from 'react';
+// import { getActivityMainData } from '../../services/FetchApi';
 import '../chartBar/chartbar.css';
 
 
 export default function ChartBar() {
-    //     const [data, setData] = useState();
-    //     useEffect(() => {
+    // const [data, setData] = useState();
+    // useEffect(() => {
 
-    //         getActivityMainData(18)
-    //         fetch('http://localhost:3000/user/18/activity')
-    //             .then((response) => response.json())
-    //             .then((data) => { setData(data.data) })
+    //     getActivityMainData(18)
+    //     fetch('http://localhost:3000/user/18/activity')
+    //         .then((response) => response.json())
+    //         .then((data) => { setData(data.data) })
 
 
 
-    //     }, [])
+    // }, [])
 
 
     const activity = [
@@ -96,7 +97,8 @@ export default function ChartBar() {
 
                     <XAxis stroke="grey" tickLine={false}
                         tick={{ fontSize: 14, fontWeight: 500 }}
-                        dy={10} axisLine={false} dataKey="name" />
+                        dy={10} axisLine={false} dataKey="name"
+                    />
                     <YAxis
                         yAxisId="kg"
                         dataKey="kilogram"
@@ -108,7 +110,6 @@ export default function ChartBar() {
                     />
                     <YAxis
                         yAxisId="cal"
-
                         dataKey="calorie"
                         orientation="false"
                         axisLine={false}

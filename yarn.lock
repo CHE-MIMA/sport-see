@@ -6112,6 +6112,9 @@
   dependencies:
     "argparse" "^2.0.1"
 
+"jsdoc@github:jsdoc/jsdoc":
+  "resolved" "git+ssh://git@github.com/jsdoc/jsdoc.git#7424c2006c1dcf2f2ede983864c4aeb7bd84cfa8"
+
 "jsdom@^16.6.0":
   "integrity" "sha512-u9Smc2G1USStM+s/x1ru5Sxrl6mPYCbByG1U/hUmqaVsm4tbNyS7CicOSRyuGQYZhTu0h84qkZZQ/I+dzizSVw=="
   "resolved" "https://registry.npmjs.org/jsdom/-/jsdom-16.7.0.tgz"
