@@ -5,11 +5,7 @@ import "../profil/profil.css";
 // import USER_MAIN_DATA from '../../data/data';
 
 const Profil = ({ id }) => {
-    // const data = USER_MAIN_DATA;
-    // for (let index = 0; index < data.length; index++) {
-    //     const element = data[index];
-    //     console.log(element);
-    // }
+
     console.log(id);
     const [data, setData] = useState();
     useEffect(() => {
