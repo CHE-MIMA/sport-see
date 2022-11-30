@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import Header from '../components/header/Header';
 import  Navertical  from '../components/navVertical/Navertical ';
 import "../styles/main.css";
@@ -8,12 +9,13 @@ import  ChartRadar from '../components/chartRadar/ChartRadar';
 // import  ScoreChart from '../components/charts/RadialBarChart';
 import Cardinfo from '../components/cardinfo/Cardinfo';
 import Profil from '../components/profil/Profil';
-import { useParams } from 'react-router-dom';
 import Scorechart from '../components/chartradialBar/ScoreChart';
 
 const Dashbord = () => {
     const URL =useParams()
     console.log(URL.id)
+    
+
     return (
         <div>
             <Header />
@@ -23,11 +25,11 @@ const Dashbord = () => {
             <div className='container-div'>
                 <div className="chart-card-flex">
                    <div className='charts'>
-                         <ChartBar />
+                         <ChartBar id={URL.id}/>
                         <div className='flex-charts'>
-                         <ChartLine />
-                         < ChartRadar />
-                         < Scorechart/> 
+                         <ChartLine id={URL.id}/>
+                         < ChartRadar id={URL.id} />
+                         < Scorechart id={URL.id}/> 
                         </div>
                     </div>
                    <Cardinfo id={URL.id}/>
