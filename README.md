@@ -14,13 +14,18 @@ This application allow you to track your workout performance.
 
 ## Launching the project
 
-- Fork the repository
+- Fork the repository of the micro API.
+( `https://github.com/CHE-MIMA/Sport-see-API-Back`)
 - Clone it on your computer.
 - The yarn command will allow you to install the dependencies.
 - The `yarn dev` command will allow you to run the micro API.
-( `https://github.com/CHE-MIMA/Sport-see-API-Back`)
-- `npm install` will allow you to install the dependencies on the front-end ( `https://github.com/CHE-MIMA/sport-see`)
-- `npm start` on the front-end ( `https://github.com/CHE-MIMA/sport-see`), from starting,  Default port : 3001
+  Default port : 3000.
+
+- Fork the repository of the front-end ( `https://github.com/CHE-MIMA/sport-see`)
+- Clone it on your computer.
+- `npm install` will allow you to install the dependencies on the front-end.
+- `npm start` on the front-end, from starting.
+  Default port : 3001
 - They have userId 12 and 18, 
 - from 12 go to (`localhost:3001/user/12`);
 - from 18 go to (`localhost:3001/user/18`);
