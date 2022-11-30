@@ -1,7 +1,5 @@
 ![Getting Started](./src/assets/logoSport.png)
    
-# trak your performance !
-
 This application allow you to track your workout performance.
 
 ## Prerequisites
@@ -24,8 +22,8 @@ This application allow you to track your workout performance.
 - `npm install` will allow you to install the dependencies on the front-end ( `https://github.com/CHE-MIMA/sport-see`)
 - `npm start` on the front-end ( `https://github.com/CHE-MIMA/sport-see`), from starting,  Default port : 3001
 - They have userId 12 and 18, 
-from 12 go to (`localhost:3001/user/12`);
-from 18 go to (`localhost:3001/user/18`);
+- from 12 go to (`localhost:3001/user/12`);
+- from 18 go to (`localhost:3001/user/18`);
 
 # Back-end endpoints :
 
