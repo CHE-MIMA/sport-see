@@ -4,45 +4,6 @@ import "../chartRadar/radarchart.css"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { useEffect, useState } from 'react';
 import { getPerformanceMainData } from '../../services/FetchApi';
-// const data = [
-// const data = [
-//     {
-//         subject: 'cardio',
-//         A: 200,
-//         B: 1,
-//         fullMark: 240,
-//     },
-//     {
-//         subject: 'energy',
-//         A: 240,
-//         B: 2,
-//         fullMark: 240,
-//     },
-//     {
-//         subject: 'endurance',
-//         A: 80,
-//         B: 3,
-//         fullMark: 240,
-//     },
-//     {
-//         subject: 'strength',
-//         A: 80,
-//         B: 4,
-//         fullMark: 240,
-//     },
-//     {
-//         subject: 'speed',
-//         A: 220,
-//         B: 5,
-//         fullMark: 240,
-//     },
-//     {
-//         subject: 'intensity',
-//         A: 210,
-//         B: 6,
-//         fullMark: 240,
-//     },
-// ];
 
 export default function ChartRadar({ id }) {
     console.log(id);
@@ -59,21 +20,11 @@ export default function ChartRadar({ id }) {
         getPerformanceData();
 
     }, [id])
-    const performanceData = data?.data;
-    const userPerformanceData = [];
-    const kindName = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
 
-    /* In this loop, we push the kind name corresponding to the value. */
-    for (let i = 0; i < performanceData.length; i++) {
-        userPerformanceData.push({
-            kind: kindName[i],
-            value: performanceData[i].value,
-        });
-    }
     return (
         <div id='radarchartDiv'>
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={userPerformanceData}
+                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}
                     margin={{
                         top: 0,
                         right: 70,

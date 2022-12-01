@@ -1,156 +1,119 @@
-// import React from 'react';
-// import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
 
-// import { useEffect, useState } from 'react';
-// import { getActivityMainData } from '../../services/FetchApi';
-// import '../chartBar/chartbar.css';
-
-
-// export default function ChartBar({ id }) {
-
-//     console.log(id);
-//     const [data, setData] = useState();
+import { useEffect, useState } from 'react';
+import { getActivityMainData } from '../../services/FetchApi';
+import '../chartBar/chartbar.css';
 
 
-//     useEffect(() => {
-//         async function getActivityData() {
-
-//             setData(await getActivityMainData(id))
-//             // console.log(getUserMainData(18));
-
-//         }
-//         getActivityData();
-
-//     }, [id])
-//     console.log(data);
-//     const session = data?.sessions;
-//     console.log(session);
-//     const userActivityData = [];
+export default function ChartBar({ id }) {
 
 
-
-//     for (let i = 0; i < session.length; i++) {
-
-//         userActivityData.push({
-//             index: i + 1,
-//             kilogram: session[i].kilogram,
-//             calories: session[i].calories,
-//         });
-//     }
+    const [datas, setData] = useState();
+    const [isLoading, setIsLoading] = useState(true);
 
 
+    useEffect(() => {
+        async function getActivityData() {
+            const newData = await getActivityMainData(id)
+            console.log(newData);
+            setData(newData)
 
-//     // const activity = [
-//     //     {
-//     //         index: 1,
-//     //         kilogram: 69,
-//     //         calories: 240,
+            // console.log(getUserMainData(18));
 
-//     //     },
-//     //     {
-//     //         index: 2,
-//     //         kilogram: 69,
-//     //         calories: 220,
+        }
+        getActivityData();
+        setIsLoading(false);
+    }, [isLoading, id],);
 
-//     //     },
-//     //     {
-//     //         index: 3,
-//     //         kilogram: 70,
-//     //         calories: 280,
+    function CustomTooltip({ active, payload }) {
+        if (active && payload && payload.length) {
+            return (
+                <div className="custom-tooltip">
+                    <p >{`${payload[0].value} kg`}</p>
+                    <p > {`${payload[1].value} kCal`}</p>
+                </div>
+            );
+        }
 
-//     //     },
-//     //     {
-//     //         index: 4,
-//     //         kilogram: 70,
-//     //         calories: 500,
+        return null;
+    }
+    const CustomCursor = ({ x, y, height }) => {
+        return <Rectangle fill="#C4C4C4" opacity={0.5} x={x + 25} y={y} width={60} height={height} />;
+    };
 
-//     //     },
-//     //     {
-//     //         index: 5,
-//     //         kilogram: 69,
-//     //         calories: 160,
+    return (
+        <div id="chartBarDiv">
+            <div className="info-graphic">
+                <div className="title-graphic ">Activité quotidienne</div>
 
-//     //     },
-//     //     {
-//     //         index: 6,
-//     //         kilogram: 69,
-//     //         calories: 162,
+                <div className="legends">
+                    <div className="circle">
+                        <div className="point black"></div>&nbsp; Poids (kg)
+                    </div>
+                    <div className="circle">
+                        <div className="point red"></div>&nbsp; Calories brûlées (kCal)
+                    </div>
+                </div>
+            </div>
+            <ResponsiveContainer width="100%" aspect={4}>
+                <BarChart
 
-//     //     },
-//     //     {
-//     //         index: 7,
-//     //         kilogram: 69,
-//     //         calories: 390,
+                    data={datas}
+                    margin={{
+                        top: 5,
+                        right: 5,
+                        left: 0,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="1 3"
+                        vertical={false}
+                        stroke="grey"
+                    />
 
-//     //     },
-//     // ];
-
-//     return (
-//         <div id="chartBarDiv">
-//             <div className="info-graphic">
-//                 <div className="title-graphic ">Activité quotidienne</div>
-
-//                 <div className="legends">
-//                     <div className="circle">
-//                         <div className="point black"></div>&nbsp; Poids (kg)
-//                     </div>
-//                     <div className="circle">
-//                         <div className="point red"></div>&nbsp; Calories brûlées (kCal)
-//                     </div>
-//                 </div>
-//             </div>
-//             <ResponsiveContainer width="100%" aspect={4}>
-//                 <BarChart
-
-//                     data={userActivityData}
-//                     margin={{
-//                         top: 5,
-//                         right: 5,
-//                         left: 0,
-//                         bottom: 5,
-//                     }}
-//                 >
-//                     <CartesianGrid strokeDasharray="1 3"
-//                         vertical={false}
-//                         stroke="grey"
-//                     />
-
-//                     <XAxis stroke="grey" tickLine={false}
-//                         tick={{ fontSize: 14, fontWeight: 500 }}
-//                         dy={10} axisLine={false} dataKey="index"
-//                     />
-//                     <YAxis
-//                         yAxisId="kg"
-//                         dataKey="kilogram"
-//                         stroke="grey"
-//                         orientation="right"
-//                         axisLine={false}
-//                         tickLine={false}
-//                         tickCount={3}
-//                     />
-//                     <YAxis
-//                         yAxisId="cal"
-//                         dataKey="calories"
-//                         orientation="false"
-//                         axisLine={false}
-//                         tickLine={false}
-//                         hide={true}
-//                     />
+                    <XAxis stroke="grey" tickLine={false}
+                        tick={{ fontSize: 14, fontWeight: 500 }}
+                        dy={10} axisLine={false} dataKey="index"
+                    />
+                    <YAxis
+                        yAxisId="kg"
+                        dataKey="kilogram"
+                        stroke="grey"
+                        orientation="right"
+                        axisLine={false}
+                        tickLine={false}
+                        tickCount={3}
+                    />
+                    <YAxis
+                        yAxisId="cal"
+                        dataKey="calories"
+                        orientation="false"
+                        axisLine={false}
+                        tickLine={false}
+                        hide={true}
+                    />
 
 
 
-//                     <Tooltip />
+                    <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
 
 
-//                     <Bar yAxisId="kg" dataKey="kilogram" radius={[10, 10, 0, 0]} barSize={8} fill="#282D30" />
-//                     <Bar yAxisId="cal" dataKey="calories" radius={[10, 10, 0, 0]} barSize={8} fill="#E60000" />
+                    <Bar yAxisId="kg" dataKey="kilogram" radius={[10, 10, 0, 0]} barSize={8} fill="#282D30" />
+                    <Bar yAxisId="cal" dataKey="calories" radius={[10, 10, 0, 0]} barSize={8} fill="#E60000" />
 
-//                 </BarChart>
+                </BarChart>
 
-//             </ResponsiveContainer>
-//         </div>
-//     );
+            </ResponsiveContainer>
+        </div>
+    );
 
+};
+
+
+// CustomTooltip.propTypes = {
+//     active: PropTypes.bool,
+//     payload: PropTypes.array,
 // };
 
 

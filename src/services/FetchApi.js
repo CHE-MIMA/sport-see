@@ -2,95 +2,175 @@ import UserModelData from '../models/usermodel';
 import ActivityModelData from '../models/ActivityModel';
 import SessionDataModel from '../models/AverageSessionsModel';
 import PerformanceDataModel from '../models/PerformanceModel';
-
+import { Env } from "../environement";
 import axios from 'axios';
-// import USER_MAIN_DATA from '../data/data';
-// import USER_ACTIVITY from '../data/data';
+import USER_MAIN_DATA from '../data/data';
+import USER_ACTIVITY from '../data/data';
+import USER_AVERAGE_SESSIONS from '../data/data';
+import USER_PERFORMANCE from '../data/data';
+
 
 export const getUserMainData = async (id) => {
+    // if (!Env.envirement === 'api') {
+    //     const data = USER_MAIN_DATA.find(
+    //         (element) => element.id.toString() === id
+    //     );
+    //     const user = new UserModelData(data);
+    //     console.log(user);
 
-    // const data = USER_MAIN_DATA.find(
-    //     (element) => element.id.toString() === id
-    // );
-    // const user = new UserModelData(data);
-    // console.log(user);
+    // }
+    // else {
 
     try {
         const data = await axios
             .get(`http://localhost:3000/user/${id}`)
             .then((response) => response.data.data);
         const user = new UserModelData(data);
-        console.log(user)
         return user;
     } catch (error) {
         console.error("ERREUR API : " + error);
         alert("Erreur API, veuillez réessayer ultérieurement.");
     }
-
+    // }
 };
 export const getActivityMainData = async (id) => {
+    // if (Env.envirement === 'mock') {
 
-    // const data = USER_ACTIVITY.find(
-    //     (element) => element.userId.toString() === userId
-    // );
-    // const activity = new ActivityModelData(data);
-    // console.log(activity);
+    //     const data = USER_ACTIVITY.find(
+    //         (element) => element.userId.toString() === id
+    //     );
+    //     const activity = new ActivityModelData(data);
 
+    //     const array = activity?.sessions;
+    //     const userActivityData = [];
+    //     for (let i = 0; i < array.length; i++) {
+
+
+    //         userActivityData.push({
+    //             index: i + 1,
+    //             kilogram: array[i].kilogram,
+    //             calories: array[i].calories,
+    //         });
+    //     }
+    //     return userActivityData;
+    // }
+    // else {
     try {
         const data = await axios
             .get(`http://localhost:3000/user/${id}/activity`)
             .then((response) => response.data.data);
         const activity = new ActivityModelData(data);
-        console.log(activity);
-        return activity;
+
+        const array = activity?.sessions;
+        const userActivityData = [];
+        for (let i = 0; i < array.length; i++) {
+
+
+            userActivityData.push({
+                index: i + 1,
+                kilogram: array[i].kilogram,
+                calories: array[i].calories,
+            });
+        }
+        return userActivityData;
 
     } catch (error) {
         console.error("ERREUR API : " + error);
         alert("Erreur API, veuillez réessayer ultérieurement.");
     }
+    // }
+
 
 };
 export const getSessionMainData = async (id) => {
 
-    // const data = USER_ACTIVITY.find(
-    //     (element) => element.userId.toString() === userId
-    // );
-    // const activity = new ActivityModelData(data);
-    // console.log(activity);
+    // if (Env.envirement === 'mock') {
 
+    //     const data = USER_AVERAGE_SESSIONS.find(
+    //         (element) => element.userId.toString() === id
+    //     );
+    //     const sessions = new SessionDataModel(data);
+    //     const averageSessions = sessions?.sessions
+    //     console.log(averageSessions)
+    //     const userSessionData = [];
+    //     const days = ["L", "M", "M", "J", "V", "S", "D"];
+
+    //     // /* Creating an array of objects with the day of the week and the session length. */
+    //     for (let i = 0; i < averageSessions.length; i++) {
+    //         userSessionData.push({
+    //             day: days[i],
+    //             sessionLength: averageSessions[i].sessionLength,
+    //         });
+    //     }
+    //     return userSessionData;
+    // } else {
     try {
         const data = await axios
             .get(`http://localhost:3000/user/${id}/average-sessions`)
             .then((response) => response.data.data);
         const sessions = new SessionDataModel(data);
         console.log(sessions);
-        return sessions;
+        const averageSessions = sessions?.sessions
+        console.log(averageSessions)
+        const userSessionData = [];
+        const days = ["L", "M", "M", "J", "V", "S", "D"];
+
+        // /* Creating an array of objects with the day of the week and the session length. */
+        for (let i = 0; i < averageSessions.length; i++) {
+            userSessionData.push({
+                day: days[i],
+                sessionLength: averageSessions[i].sessionLength,
+            });
+        }
+        return userSessionData;
 
     } catch (error) {
         console.error("ERREUR API : " + error);
         alert("Erreur API, veuillez réessayer ultérieurement.");
     }
-
+    // }
 };
 export const getPerformanceMainData = async (id) => {
+    // if (Env.envirement === 'mock') {
+    //     const data = USER_PERFORMANCE.find(
+    //         (element) => element.userId.toString() === id
+    //     );
+    //     const performance = new PerformanceDataModel(data);
+    //     const performanceData = performance?.data;
+    //     const userPerformanceData = [];
+    //     const kindName = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
 
-    // const data = USER_ACTIVITY.find(
-    //     (element) => element.userId.toString() === userId
-    // );
-    // const activity = new ActivityModelData(data);
-    // console.log(activity);
-
+    //     /* In this loop, we push the kind name corresponding to the value. */
+    //     for (let i = 0; i < performanceData.length; i++) {
+    //         userPerformanceData.push({
+    //             kind: kindName[i],
+    //             value: performanceData[i].value,
+    //         });
+    //     }
+    //     return userPerformanceData;
+    // } else {
     try {
         const data = await axios
             .get(`http://localhost:3000/user/${id}/performance`)
             .then((response) => response.data.data);
         const performance = new PerformanceDataModel(data);
-        console.log(performance);
-        return performance;
+
+        const performanceData = performance?.data;
+        const userPerformanceData = [];
+        const kindName = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
+
+        /* In this loop, we push the kind name corresponding to the value. */
+        for (let i = 0; i < performanceData.length; i++) {
+            userPerformanceData.push({
+                kind: kindName[i],
+                value: performanceData[i].value,
+            });
+        }
+        return userPerformanceData;
 
     } catch (error) {
         console.error("ERREUR API : " + error);
         alert("Erreur API, veuillez réessayer ultérieurement.");
     }
-
+    // }
 };

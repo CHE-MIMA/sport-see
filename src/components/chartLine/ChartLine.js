@@ -56,19 +56,7 @@ export default function ChartLine({ id }) {
         getSessionsData();
 
     }, [id])
-    console.log(data)
-    const averageSessions = data?.sessions
-    console.log(averageSessions)
-    const userSessionData = [];
-    const days = ["L", "M", "M", "J", "V", "S", "D"];
 
-    /* Creating an array of objects with the day of the week and the session length. */
-    for (let i = 0; i < averageSessions.length; i++) {
-        userSessionData.push({
-            day: days[i],
-            sessionLength: averageSessions[i].sessionLength,
-        });
-    }
 
     return (
         <div id='linechartDiv'>
@@ -80,7 +68,7 @@ export default function ChartLine({ id }) {
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
 
-                    data={userSessionData}
+                    data={data}
                     margin={{
                         top: 100,
                         right: 0,

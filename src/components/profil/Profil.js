@@ -8,14 +8,16 @@ const Profil = ({ id }) => {
 
     console.log(id);
     const [data, setData] = useState();
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         async function getUserData() {
-
-            setData(await getUserMainData(id))
+            const newData = await getUserMainData(id)
+            setData(newData)
             // console.log(getUserMainData(18));
         }
         getUserData();
-    }, [id])
+        setIsLoading(false);
+    }, [isLoading, id]);
 
 
     return (
