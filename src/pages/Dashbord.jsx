@@ -11,6 +11,12 @@ import Cardinfo from '../components/cardinfo/Cardinfo';
 import Profil from '../components/profil/Profil';
 import Scorechart from '../components/chartradialBar/ScoreChart';
 
+/**
+ * @file React component for the main page of the app
+ * Render the whole page and call the charts components
+ * @returns {JSX.Element} Main page components
+ */
+
 const Dashbord = () => {
     const URL =useParams()
     console.log(URL.id)
