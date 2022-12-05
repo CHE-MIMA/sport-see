@@ -12,7 +12,7 @@ let isApi = true;
 export const getUserMainData = async (id) => {
 
     if (!isApi) {
-        // alert("donnée moqués")
+        // alert("données moqués")
         const data = USER_MAIN_DATA.find(
             (element) => element.id.toString() === id
         );
@@ -22,7 +22,7 @@ export const getUserMainData = async (id) => {
 
     }
     else {
-        // alert("donnée de l'api")
+        // alert("données de l'api")
         try {
             /**
             * axios user datas
