@@ -1,6 +1,11 @@
-
+// /**
+//  * a class to use as a model for the API call.
+//  */
 export default class UserModelData {
-
+    /**
+    *
+    * @param {{}} data The data of the user information. 
+    */
     constructor(data) {
         this.id = data.id;
         this.firstName = data.userInfos.firstName;

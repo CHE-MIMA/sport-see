@@ -4,6 +4,13 @@ import "../chartRadar/radarchart.css"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { useEffect, useState } from 'react';
 import { getPerformanceMainData } from '../../services/FetchApi';
+import PropTypes from "prop-types";
+
+/**
+ * @component React component : performances chart
+ * @param {number} id
+ * @returns {JSX.Element}
+ */
 
 export default function ChartRadar({ id }) {
     console.log(id);
@@ -12,9 +19,14 @@ export default function ChartRadar({ id }) {
 
     useEffect(() => {
         async function getPerformanceData() {
+            /**
+               * Call the import and format function
+               * @param {number} id
+               * @return {Array<object>}  performance datas (kind, value)
+               */
+            const newData = await getPerformanceMainData(id);
+            setData(newData)
 
-            setData(await getPerformanceMainData(id))
-            // console.log(getUserMainData(18));
 
         }
         getPerformanceData();
@@ -41,3 +53,6 @@ export default function ChartRadar({ id }) {
     );
 
 }
+ChartRadar.propTypes = {
+    id: PropTypes.number.isRequired,
+};

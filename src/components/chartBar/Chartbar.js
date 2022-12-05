@@ -1,31 +1,47 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
-
 import { useEffect, useState } from 'react';
 import { getActivityMainData } from '../../services/FetchApi';
 import '../chartBar/chartbar.css';
+import PropTypes from "prop-types";
 
-
+/**
+ * @component React component : activity chart
+ * @param {number} id
+ * @returns {JSX.Element}
+ */
 export default function ChartBar({ id }) {
 
 
     const [datas, setData] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+
 
 
     useEffect(() => {
+
         async function getActivityData() {
+            /**
+           * Call the import and format function
+           * @param {number} id
+           * @return {Array<object>} activity datas (day, kg and calories)
+           */
             const newData = await getActivityMainData(id)
-            console.log(newData);
+            // console.log(newData);
             setData(newData)
 
             // console.log(getUserMainData(18));
 
         }
         getActivityData();
-        setIsLoading(false);
-    }, [isLoading, id],);
 
+    }, [id],);
+
+
+    /**
+     * @param {boolean}  [Props.active='true']
+     * @param {array}   [Props.payload=[]]
+     * @returns an active tooltip
+     */
     function CustomTooltip({ active, payload }) {
         if (active && payload && payload.length) {
             return (
@@ -38,9 +54,28 @@ export default function ChartBar({ id }) {
 
         return null;
     }
-    const CustomCursor = ({ x, y, height }) => {
-        return <Rectangle fill="#C4C4C4" opacity={0.5} x={x + 25} y={y} width={60} height={height} />;
+
+    CustomTooltip.propTypes = {
+        active: PropTypes.bool,
+        payload: PropTypes.array,
     };
+
+    /**
+     * @param {number} x The coordinates x
+     * @param {number} y The coordinates y
+     * @param {number} height The height of the rectangle
+  
+     * @returns rectangle grey
+     */
+    const CustomCursor = ({ x, y, height }) => {
+        return <Rectangle fill="#C4C4C4" opacity={0.4} x={x + 30} y={y} width={60} height={height} />;
+    };
+    CustomCursor.propTypes = {
+        x: PropTypes.number,
+        y: PropTypes.number,
+        height: PropTypes.number,
+    };
+
 
     return (
         <div id="chartBarDiv">
@@ -78,6 +113,7 @@ export default function ChartBar({ id }) {
                     />
                     <YAxis
                         yAxisId="kg"
+                        domain={["dataMin -1", "dataMax +2"]}
                         dataKey="kilogram"
                         stroke="grey"
                         orientation="right"
@@ -108,13 +144,13 @@ export default function ChartBar({ id }) {
         </div>
     );
 
+
+}
+
+ChartBar.propTypes = {
+    id: PropTypes.number.isRequired,
 };
 
-
-// CustomTooltip.propTypes = {
-//     active: PropTypes.bool,
-//     payload: PropTypes.array,
-// };
 
 
 

@@ -3,24 +3,34 @@ import React from 'react';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { getUserMainData } from '../../services/FetchApi';
 import "../chartradialBar/chartRadialBar.css";
+import PropTypes from "prop-types";
 
 
-
+/**
+ * @component React component : score chart
+ * @param {number} id
+ * @returns {JSX.Element}
+ */
 
 export default function Scorechart({ id }) {
 
     console.log(id);
     const [data, setData] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         async function getUserData() {
+            /**
+          * Call the import and format function
+          * @param {number} id
+          * @return {{}} user datas (id, userInfos, score, keyData)
+          */
             const newData = await getUserMainData(id)
             setData(newData)
-            // console.log(getUserMainData(18));
+
         }
         getUserData();
-        setIsLoading(false);
-    }, [isLoading, id]);
+
+    }, [id]);
 
     console.log(data)
     const score = data?.todayScore * 100
@@ -57,6 +67,9 @@ export default function Scorechart({ id }) {
         </div>
     );
 }
+Scorechart.propTypes = {
+    id: PropTypes.number.isRequired,
+};
 
 
 

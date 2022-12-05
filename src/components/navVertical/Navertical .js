@@ -5,6 +5,11 @@ import iconNatation from '../../assets/iconNatation.png';
 import iconVelo from '../../assets/iconVelo.png';
 import iconPoids from '../../assets/iconPoids.png';
 import "../navVertical/navertical.css";
+
+/**
+ * @file React component for the vertical navigation
+ * @returns {JSX.Element} 
+ */
 const Navertical = () => {
     return (
 

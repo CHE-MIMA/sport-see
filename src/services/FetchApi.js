@@ -2,7 +2,6 @@ import UserModelData from '../models/usermodel';
 import ActivityModelData from '../models/ActivityModel';
 import SessionDataModel from '../models/AverageSessionsModel';
 import PerformanceDataModel from '../models/PerformanceModel';
-import { Env } from "../environement";
 import axios from 'axios';
 import USER_MAIN_DATA from '../data/data';
 import USER_ACTIVITY from '../data/data';
@@ -22,6 +21,11 @@ export const getUserMainData = async (id) => {
     // else {
 
     try {
+        /**
+       * axios user datas
+       * @param {number} id of user
+       * @returns {object}
+       */
         const data = await axios
             .get(`http://localhost:3000/user/${id}`)
             .then((response) => response.data.data);
@@ -56,12 +60,15 @@ export const getActivityMainData = async (id) => {
     // }
     // else {
     try {
+
         const data = await axios
             .get(`http://localhost:3000/user/${id}/activity`)
             .then((response) => response.data.data);
         const activity = new ActivityModelData(data);
 
         const array = activity?.sessions;
+
+
         const userActivityData = [];
         for (let i = 0; i < array.length; i++) {
 
@@ -112,7 +119,15 @@ export const getSessionMainData = async (id) => {
         console.log(sessions);
         const averageSessions = sessions?.sessions
         console.log(averageSessions)
+
+        /**
+        * Push the datas in an array.
+        * @type {Array<object>}
+        * @param day: days {string}
+        * @param sessionLength: duration (numbers)
+        */
         const userSessionData = [];
+
         const days = ["L", "M", "M", "J", "V", "S", "D"];
 
         // /* Creating an array of objects with the day of the week and the session length. */
@@ -156,7 +171,13 @@ export const getPerformanceMainData = async (id) => {
         const performance = new PerformanceDataModel(data);
 
         const performanceData = performance?.data;
+
         const userPerformanceData = [];
+
+        /**
+         * Contains every kind
+         * @type {Array}
+         */
         const kindName = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
 
         /* In this loop, we push the kind name corresponding to the value. */

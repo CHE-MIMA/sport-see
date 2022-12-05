@@ -6,17 +6,30 @@ import iconFat from '../../assets/fat-icon.png';
 import iconProtein from '../../assets/protein-icon.png';
 import { getUserMainData } from '../../services/FetchApi';
 import '../cardinfo/cardinfo.css'
+import PropTypes from "prop-types";
 
-const Cardinfo = ({ id }) => {
 
-    console.log(id);
+/**
+ * @component React component :  user keydata information
+ * @param {number} id
+ * @returns {JSX.Element}
+ */
+
+export default function Cardinfo({ id }) {
+
+    // console.log(id);
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         async function getUserData() {
+            /**
+              * Call the import and format function
+              * @param {number} id
+              * @return {{}} user datas (id, userInfos, score, keyData)
+              */
             const newData = await getUserMainData(id)
             setData(newData)
-            // console.log(getUserMainData(18));
+
         }
         getUserData();
         setIsLoading(false);
@@ -56,4 +69,7 @@ const Cardinfo = ({ id }) => {
     );
 };
 
-export default Cardinfo;
+
+Cardinfo.propTypes = {
+    id: PropTypes.number.isRequired,
+};

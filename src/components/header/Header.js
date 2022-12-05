@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import logo from "../../assets/logoSport.png";
 import "../header/navigation.css"
 
-
+/**
+ * @file React component for the horizontal navigation
+ * @returns {JSX.Element} 
+ */
 const Header = () => {
     return (
         <div className='header'>

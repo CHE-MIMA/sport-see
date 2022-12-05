@@ -2,22 +2,33 @@ import { useEffect, useState } from "react";
 import React from 'react';
 import { getUserMainData } from '../../services/FetchApi';
 import "../profil/profil.css";
+import PropTypes from "prop-types";
 // import USER_MAIN_DATA from '../../data/data';
 
-const Profil = ({ id }) => {
+/**
+ * @component React component for the welcome and firstName of the user.
+ * @param {number} id
+ * @returns {JSX.Element}
+ */
+export default function Profil({ id }) {
 
     console.log(id);
     const [data, setData] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         async function getUserData() {
+            /**
+             * Call the import and format function
+             * @param {number} id
+             * @return {{}} user datas (id, userInfos, score, keyData)
+             */
             const newData = await getUserMainData(id)
             setData(newData)
             // console.log(getUserMainData(18));
         }
         getUserData();
-        setIsLoading(false);
-    }, [isLoading, id]);
+
+    }, [id]);
 
 
     return (
@@ -30,6 +41,8 @@ const Profil = ({ id }) => {
     );
 };
 
-export default Profil;
+Profil.propTypes = {
+    id: PropTypes.number.isRequired,
+};
 
 
