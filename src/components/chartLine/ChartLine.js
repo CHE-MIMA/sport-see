@@ -88,10 +88,13 @@ export default function ChartLine({ id }) {
 
                     <XAxis dataKey="day"
                         stroke="none"
+
+                        fontSize="16px"
                         tick={{ fill: "rgba(255, 255, 255, 0.5)" }} />
 
                     <YAxis dataKey="sessionLength" hide={true} />
-                    <Line type="monotone" dataKey="sessionLength" stroke="#fff" strokeWidth={2} dot={0} />
+                    <Line
+                        type="monotone" dataKey="sessionLength" stroke="#fff" strokeWidth={2} dot={0} />
                     <Tooltip content={<CustomTooltipLine />}
                         cursor={<CustomCursorLine />} />
 
