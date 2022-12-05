@@ -12,5 +12,8 @@ export default class ActivityModelData {
         this.userId = data.userId;
         this.sessions = data.sessions;
     }
+
+
 }
+
 

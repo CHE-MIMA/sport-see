@@ -20,6 +20,11 @@ import Scorechart from '../components/chartradialBar/ScoreChart';
 const Dashbord = () => {
     const URL =useParams()
     console.log(URL.id)
+    
+    /**
+	 * Id of the wanted user, currently 12 or 18
+	 * @type {number}
+	 */
     const id = URL.id;
    
 
